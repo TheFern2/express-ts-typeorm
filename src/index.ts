@@ -5,7 +5,7 @@ import morgan from "morgan";
 import cors from "cors";
 import { join } from "path";
 import { createConnection } from "typeorm";
-//import userRoutes from "./routes/user.routes";
+import userRoutes from "./routes/user.routes";
 
 const main = async () => {
   const credentials = {
@@ -43,7 +43,7 @@ const main = async () => {
   }
 
   // routes
-  //app.use(userRoutes);
+  app.use(userRoutes);
 
   app.listen(process.env.SERVER_PORT || 3000, () => {
     console.log(`Server started ${process.env.SERVER_PORT}`);
